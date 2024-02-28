@@ -1,20 +1,20 @@
 from datetime import datetime, date
 
 class Task:
-    def __init__(self, id_: int, description: str, done: bool) -> None:
+    def __init__(self, id_:str, description:str, done:bool) -> None:
         self.id : str = id_
         self.description = description
         self.done : bool = done
         self.createdAt : date = date.today()
-        self.deadline : date
+        self.deadline : str = None
 
-    def getId(self):
+    def getId(self) -> str:
         return self.id
     
     def getDescription(self):
         return self.description
 
-    def setDeadline(self, deadline:date):
+    def setDeadline(self, deadline:str):
         self.deadline = deadline
         return self
     

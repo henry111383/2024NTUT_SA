@@ -32,8 +32,12 @@ class CommandParser(AbstractParser):
         elif cmdName == "uncheck":
             args = self.__scanner.nextToken()
             self.__builder.buildUncheckCommand(args)
-        elif cmdName == "help":
-            self.__builder.buildHelpCommand()
+        # elif cmdName == "help":
+        #     self.__builder.buildHelpCommand()
+        elif cmdName == "deadline":
+            taskID = self.__scanner.nextToken()
+            deadline = self.__scanner.nextToken()
+            self.__builder.buildDeadlineCommand(taskID, deadline)
         else :
             self.__builder.buildErrorCommand(cmdName) # error
 

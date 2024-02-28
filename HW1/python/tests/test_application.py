@@ -65,6 +65,21 @@ class ApplicationTest(unittest.TestCase):
 
         self.execute("quit")
 
+    # f1
+    def test_deadline_works(self):
+        self.execute("show")
+        self.execute("add project secrets")
+        self.execute("add task secrets Eat more donuts.")
+        self.execute("add task secrets Destroy all humans.")
+        self.execute("deadline 2 2/23")
+        self.execute("show")
+        self.read_lines(
+            "secrets",
+            "  [ ] 1: Eat more donuts.",
+            "  [ ] 2: Destroy all humans. (deadline:2/23)",
+            "")
+        self.execute("quit")
+
     def execute(self, command):
         self.write(command + "\n")
 

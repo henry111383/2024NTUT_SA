@@ -25,12 +25,16 @@ class CommandBuilder(AbstractBuilder):
         self.__cmd = uncheckCommand()
         self.__cmd.setTaskID(taskID)
     
-    def buildHelpCommand(self):
-        self.__cmd = helpCommand()
+    # def buildHelpCommand(self):
+    #     self.__cmd = helpCommand()
 
     def buildErrorCommand(self, msg):
         self.__cmd = errorCommand()
         self.__cmd.setMsg(msg)
+
+    def buildDeadlineCommand(self, taskID:str, deadline:str):
+        self.__cmd = deadlineCommnad()
+        self.__cmd.setID(taskID, deadline)
     
     def getCommand(self):
         return self.__cmd
