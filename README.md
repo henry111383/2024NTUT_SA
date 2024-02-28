@@ -6,11 +6,13 @@ The application requires Python 3.5 or above
 
 To run tests:
 ```
+cd python
 python -m unittest -v
 ```
 
 To run the application:
 ```
+cd python
 python -m task_list
 ```
 
