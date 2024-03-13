@@ -16,13 +16,51 @@ cd python
 python -m task_list
 ```
 
-## How did i do ?
-- Implemented task list functionality using the Strategy pattern.
-- Segregated methods from the tasklist for better organization.
-- Improved extensibility by adopting design patterns like Builder, Scanner, and Parser.
-- Subclassed abstract class Command to enhance extensibility further.
-- Facilitated flexibility in adding new commands and functionalities.
-- Extracted irrelevant attributes from TaskList, such as the running program being class "App".
-- Ensured each class has a single responsibility for better code organization.
-- Enhanced cohesion and clarity of each class's purpose.
-Contributed to a more robust and understandable design.
+```
+.
+├── README.md
+├── setup.py
+├── task_list
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── adapter
+│   │   ├── console.py
+│   │   ├── controller.py
+│   │   └── presenter.py
+│   ├── entity
+│   │   ├── Project.py
+│   │   └── Task.py
+│   └── usecase
+│       ├── AddProjectUseCase.py
+│       ├── AddTaskUseCase.py
+│       ├── CheckUseCase.py
+│       ├── Command.py
+│       ├── ErrorUseCase.py
+│       ├── ProjectDto.py
+│       ├── ProjectMapper.py
+│       ├── ShowUseCase.py
+│       ├── TaskDto.py
+│       ├── TaskMapper.py
+│       ├── UncheckUseCase.py
+│       ├── in_port
+│       │   ├── FetchCmdInput.py
+│       │   ├── FetchCmdUseCaseImp.py
+│       │   ├── FetchProjectInput.py
+│       │   ├── FetchProjectUseCaseImpl.py
+│       │   ├── FetchTaskInput.py
+│       │   ├── FetchTaskUseCaseImpl.py
+│       │   └── Input.py
+│       └── out_port
+│           ├── FetchProjectMapperImpl.py
+│           ├── FetchProjectOutput.py
+│           ├── FetchShowOutput.py
+│           ├── FetchShowPresenterImpl.py
+│           ├── FetchTaskMapperImpl.py
+│           ├── FetchTaskOutput.py
+│           └── Output.py
+└── tests
+    ├── __init__.py
+    └── test_application.py
+
+8 directories, 36 files
+```

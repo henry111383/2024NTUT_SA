@@ -1,4 +1,4 @@
-class Task:
+class TaskDto:
     def __init__(self, id_:str, projectID:int, description:str, done:bool) -> None:
         self._projectID = projectID
         self._id : str = id_
@@ -9,10 +9,6 @@ class Task:
     def id(self) -> str:
         return self._id
     
-    @property
-    def projectID(self) -> int:
-        return self._projectID
-
     @property
     def description(self):
         return self._description
